@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+body {
+    background-image: url(data:image/png;base64,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);
+    
+}
+h1 {
+    display: flex;
+    align-content: space-between;
+}
+h2 {
+display: flex;
+align-content: space-between;
+padding-right: 20px;
+}
+header {
+height: 80px;
+width: 100%;
+
+color: white;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 40px;
+background-color: gray;
+text-align: center;
+padding: 20px;
+}
+.list {
+height: 200px;
+width: 100%;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.player {
+    height: 160px;
+    width: 85%;
+    border-radius: 5px;
+    background-color: gray;
+    color: lightblue;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	margin: 20px;
+}
+.lineup {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: smaller;
+    width: 90%;
+    height: 680px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+    align-content: stretch;
+    border-radius: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.x-btn {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: large;
+    text-shadow: 1px 1px black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.players {
+    
+    width: 20vw;
+    background-color: gray;
+    display: flex;
+    font-size: smaller;
+    color: white;
+    margin: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+   
+    
 }
-
-.App-link {
-  color: #61dafb;
+.button {
+    width: 10vw;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img {
+    width: 50px;
+}
+.playerImg {
+    width: 150px;
+    
+}
+.div {
+    height: 60px;
 }
